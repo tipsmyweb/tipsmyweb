@@ -16,7 +16,7 @@ return [
     'supports_credentials' => true,
     'allowed_origins' => [
         env('MAIN_APP_URL', 'http://localhost:3000'),
-        env('ADMIN_APP_URL', 'http://localhost:3005')
+        env('ADMIN_APP_URL', 'http://localhost:3005'),
         env('MAIN_APP_PREVIEW_URL', 'http://localhost:3000'),
         env('ADMIN_APP_PREVIEW_URL', 'http://localhost:3005')
     ],
