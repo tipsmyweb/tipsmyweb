@@ -25,12 +25,12 @@ Follow these steps to install the project from scratch.
 
 First clone the project by running the following command in the directory where you want the project to be installed.
 ```bash
-git clone https://github.com/jpennors/tips_my_web.git
+git clone https://github.com/tipsmyweb/tipsmyweb.git
 ``` 
 
-This will  create a directory named `tips_my_web`: enter it!
+This will  create a directory named `tipsmyweb`: enter it!
 ```bash
-cd tips_my_web
+cd tipsmyweb
 ```
 
 ## Install dependencies
