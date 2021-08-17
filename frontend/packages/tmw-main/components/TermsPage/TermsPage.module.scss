@@ -1,0 +1,47 @@
+@use '../../constants/ui-constants' as ui;
+
+.terms-page {
+    color: white;
+    font-size: ui.$app-font-size-medium;
+    font-family: ui.$app-font-regular;
+
+    margin: auto;
+    width: 75%;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        width: 85%;
+    }
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 40px;
+
+    font-size: ui.$app-font-size-extra-large;
+    font-family: ui.$app-font-medium;
+}
+
+.subtitle {
+    font-size: ui.$app-font-size-large;
+    font-family: ui.$app-font-semi-bold;
+    margin-top: 40px;
+}
+
+.content {
+    margin-bottom: 30px;
+
+    a {
+        color: white
+    }
+
+    p {
+        text-align: justify;
+        width: 100%;
+    }
+}
+
+.back-button {
+    text-align: center;
+    margin-bottom: 30px;
+}

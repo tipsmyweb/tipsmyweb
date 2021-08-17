@@ -1,0 +1,11 @@
+/*
+ * This file should only contain fixes for UI inconsistencies in semantic-ui-react.
+ */
+
+body {
+    min-width: 450px;
+}
+
+.ui.form input[type=file] {
+    padding: 0.5em;
+}

@@ -1,0 +1,50 @@
+@use '../../constants/ui-constants' as ui;
+
+.contact-form {
+    font-family: ui.$app-font-regular;
+    text-align: center;
+    color: black;
+    width: 100%;
+}
+
+.title {
+    font-family: ui.$app-font-medium;
+    font-size: ui.$app-font-size-large;
+    margin-bottom: 3px;
+}
+
+.subtitle {
+    font-family: ui.$app-font-regular;
+    font-size: ui.$app-font-size-medium;
+    margin-bottom: 15px;
+    color: #343434;
+}
+
+.body {
+    font-size: ui.$app-font-size-medium;
+}
+
+.email-input {
+}
+
+.message-input {
+    height: 120px;
+}
+
+.buttons {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+}
+
+.submit-error {
+    color: ui.$app-color-background-red;
+    font-size: ui.$app-font-size-medium;
+    font-family: ui.$app-font-regular;
+    text-align: center;
+    margin-top: 10px;
+}

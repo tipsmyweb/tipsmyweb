@@ -1,0 +1,38 @@
+@use '../../constants/ui-constants' as ui;
+
+.not-found-error-page {
+    color: white;
+    margin: auto;
+    width: 75%;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        width: 85%;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .image {
+        margin-top: 50px;
+        width: 300px;
+    }
+
+    .title {
+        margin-top: 20px;
+        font-size: ui.$app-font-size-extra-large;
+        font-family: ui.$app-font-medium;
+    }
+
+    .subtitle {
+        margin-top: 5px;
+        font-size: ui.$app-font-size-large;
+        font-family: ui.$app-font-light;
+    }
+
+    .back-button {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+}

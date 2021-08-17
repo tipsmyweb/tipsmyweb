@@ -1,0 +1,45 @@
+@use '../../constants/ui-constants' as ui;
+
+.layout-footer {
+    width: 88%;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: center;
+}
+
+.left-side {
+
+    a, p {
+        font-family: ui.$app-font-medium;
+        color: white;
+        font-size: ui.$app-font-size-small;
+    }
+
+    p {
+        display: inline-block;
+        margin-right: 15px;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            color: white;
+        }
+    }
+}
+
+.social-link-img {
+    width: 30px;
+    margin-left: 5px;
+    vertical-align: middle;
+}

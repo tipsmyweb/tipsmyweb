@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Montserrat-Light';
+    src: url("../assets/fonts/Montserrat-Light.ttf");
+}
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url("../assets/fonts/Montserrat-Regular.ttf");
+}
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url("../assets/fonts/Montserrat-Medium.ttf");
+}
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url("../assets/fonts/Montserrat-SemiBold.ttf");
+}
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url("../assets/fonts/Montserrat-Bold.ttf");
+}
+
+$app-font-light: 'Montserrat-Light';
+$app-font-regular: 'Montserrat-Regular';
+$app-font-medium: 'Montserrat-Medium';
+$app-font-semi-bold: 'Montserrat-SemiBold';
+$app-font-bold: 'Montserrat-Bold';
+
+$app-font-size-extra-small: 8px;
+$app-font-size-small: 10px;
+$app-font-size-medium: 13px;
+$app-font-size-large: 18px;
+$app-font-size-extra-large: 30px;
+
+$app-color-green: #1ebf74;
+$app-color-green-2: #1fa549;
+
+$app-color-yellow: #bf8426;
+
+$app-color-red: #bf3442;
+
+$app-color-background-red: #f46d7b;
+$app-color-background-orange: #FB9E3A;
+
+$app-color-light-grey-1: #f1f1f1;
+$app-color-light-grey-2: #e0e0e0;
+$app-color-light-grey-3: #d0d0d0;
+
+$app-viewport-breakpoint-mobile: 450px;
+$app-viewport-breakpoint-tablet: 850px;
+
+$app-curve-in-out-cubic: cubic-bezier(0.65, 0.05, 0.36, 1);
+

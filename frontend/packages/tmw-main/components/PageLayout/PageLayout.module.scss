@@ -1,0 +1,19 @@
+@use 'constants/ui-constants' as ui;
+
+.page-layout {
+    background-image: linear-gradient(-240deg, ui.$app-color-background-red, ui.$app-color-background-orange);
+    background-color: red;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    position: absolute;
+    min-height: calc(100% - 55px);
+    padding-bottom: 55px;
+
+    width: 100%;
+    min-width: 355px;
+
+    font-family: ui.$app-font-medium;
+    color: white;
+}

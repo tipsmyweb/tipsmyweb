@@ -1,0 +1,1 @@
+export { TagsEditPage } from './TagsEditPage';

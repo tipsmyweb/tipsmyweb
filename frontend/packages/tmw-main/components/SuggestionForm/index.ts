@@ -1,0 +1,1 @@
+export { SuggestionForm } from './SuggestionForm';

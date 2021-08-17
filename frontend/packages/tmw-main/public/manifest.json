@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "TispMyWeb",
+  "description": "Improve your workflow with community shared websites and resources that will change your work for ever.",
+  "version": "1.0.0",
+  "icons": {
+    "128": "/images/logo.png"
+  },
+  "app": {
+    "urls": [
+      "http://tipsmyweb.com"
+    ],
+    "launch": {
+      "web_url": "http://tipsmyweb.com"
+    }
+  },
+  "permissions": [
+    "unlimitedStorage",
+    "notifications"
+  ]
+}

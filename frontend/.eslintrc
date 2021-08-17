@@ -1,0 +1,111 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jest": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
+    ],
+    // "parser": "babel-eslint",
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": { "jsx": true },
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "plugins": ["react"],
+    "rules": {
+        // Custom Rules
+        "comma-dangle": ["error", "always-multiline"],
+        "react/jsx-props-no-spreading": "off",
+        "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
+        "semi": ["error", "always"],
+        "arrow-parens": ["error", "as-needed"],
+        "object-curly-spacing": ["error", "always"]
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/*.ts",
+                "**/*.tsx"
+            ],
+            "env": {
+                "browser": true,
+                "es6": true,
+                "jest": true
+            },
+            "extends": [
+                "eslint:recommended",
+                "plugin:react/recommended",
+                "plugin:@typescript-eslint/eslint-recommended",
+                "plugin:@typescript-eslint/recommended",
+                "plugin:import/errors",
+                "plugin:import/warnings",
+                "plugin:import/typescript",
+                "plugin:prettier/recommended"
+            ],
+            "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+                "ecmaFeatures": {
+                    "jsx": true
+                },
+                "ecmaVersion": 2019,
+                "sourceType": "module",
+                "project": "./tsconfig.json"
+            },
+            "plugins": [
+                "react",
+                "@typescript-eslint"
+            ],
+            "rules": {
+                "linebreak-style": [
+                    "error",
+                    "unix"
+                ],
+                "comma-dangle": [
+                    "error",
+                    "always-multiline"
+                ],
+                "react/jsx-filename-extension": [
+                    1,
+                    {
+                        "extensions": [
+                            ".jsx",
+                            ".tsx"
+                        ]
+                    }
+                ],
+                "@typescript-eslint/no-explicit-any": 0,
+                "semi": [
+                    "error",
+                    "always"
+                ],
+                "arrow-parens": [
+                    "error",
+                    "as-needed"
+                ],
+                "react/prop-types": "off",
+                "camelcase": "off",
+                "@typescript-eslint/camelcase": [
+                    "off"
+                ],
+                "object-curly-spacing": [
+                    "error",
+                    "always"
+                ]
+            },
+            "settings": {
+                "react": {
+                    "version": "detect"
+                }
+            }
+        }
+    ]
+}

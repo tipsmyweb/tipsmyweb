@@ -1,0 +1,14 @@
+/vendor
+.env
+.phpunit.result.cache
+/api/vendor
+/api/.env
+/api/.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+composer.phar
+.idea
+.env.local
+.env.prod
+/.metals
+deploy.env.ini

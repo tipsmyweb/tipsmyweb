@@ -1,0 +1,97 @@
+@use '../../constants/ui-constants' as ui;
+
+.search-page {
+    width: 88%;
+    margin: 0 auto 0;
+    max-width: 800px;
+}
+
+.top-spacing {
+    width: 100%;
+    margin: 20px 0 0;
+    height: calc(17vh - 70px);
+}
+
+.title {
+    font-family: ui.$app-font-regular;
+    text-align: center;
+    font-size: ui.$app-font-size-extra-large;
+    margin-top: 0;
+    margin-bottom: 15px;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        font-size: 6vw;
+    }
+}
+
+.title-bold {
+    font-family: ui.$app-font-semi-bold;
+}
+
+.help-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.help-content {
+    display: inline-block;
+    font-family: ui.$app-font-regular;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: ui.$app-color-background-red;
+    border-radius: 40px;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 14px;
+    padding: 8px 12px;
+    margin-top: 10px;
+    opacity: 0.5;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        font-size: 12px;
+        padding: 7px 10px;
+    }
+
+    &:hover {
+        padding: 8px 30px;
+        font-size: 15px;
+        margin-top: 0;
+        opacity: 1;
+
+        transition: opacity 0.3s ease-in-out;
+
+        @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+            font-size: 12px;
+            padding: 8px 25px;
+        }
+
+        @media (max-width: ui.$app-viewport-breakpoint-tablet) {
+            border-radius: 8px;
+        }
+    }
+
+    &-text {
+        display: none;
+    }
+
+    &:hover &-text {
+        display: inline;
+    }
+
+    &:hover &-icon {
+        display: none;
+    }
+}
+
+.help-small {
+    display: inline-block;
+    margin-top: 5px;
+    font-family: ui.$app-font-semi-bold;
+    font-size: ui.$app-font-size-medium;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        font-size: 10px;
+    }
+}

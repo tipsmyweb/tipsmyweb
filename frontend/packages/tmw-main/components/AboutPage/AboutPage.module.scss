@@ -1,0 +1,32 @@
+@use '../../constants/ui-constants' as ui;
+
+.about-page {
+    color: white;
+    font-size: ui.$app-font-size-medium;
+    font-family: ui.$app-font-regular;
+
+    margin: auto;
+    width: 75%;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        width: 85%;
+    }
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 40px;
+
+    font-size: ui.$app-font-size-extra-large;
+    font-family: ui.$app-font-medium;
+}
+
+.content {
+    margin-bottom: 30px;
+
+    p {
+        text-align: justify;
+        width: 100%;
+    }
+}

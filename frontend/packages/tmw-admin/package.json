@@ -1,0 +1,30 @@
+{
+  "name": "tmw-admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3005",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "chart.js": "^3.4.1",
+    "next": "11.0.1",
+    "next-compose-plugins": "^2.2.1",
+    "next-images": "^1.8.1",
+    "next-transpile-modules": "^8.0.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3",
+    "tmw-common": "*",
+    "xlsx": "^0.15.5",
+    "semantic-ui-calendar-react": "^0.15.3"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "eslint-config-next": "11.0.1"
+  }
+}

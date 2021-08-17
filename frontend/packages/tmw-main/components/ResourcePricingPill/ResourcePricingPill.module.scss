@@ -1,0 +1,31 @@
+@use '../../constants/ui-constants' as ui;
+
+.resource-pricing-pill {
+    font-family: ui.$app-font-regular;
+    border: black 1px solid;
+    background: transparent;
+    color: black;
+    display: inline-block;
+    text-decoration: none;
+    user-select: none;
+    outline: none;
+
+    border-radius: 30px;
+    font-size: 10px;
+    padding: 0.3em 1em;
+}
+
+.green {
+    border-color: ui.$app-color-green;
+    color: ui.$app-color-green;
+}
+
+.yellow {
+    border-color: ui.$app-color-yellow;
+    color: ui.$app-color-yellow;
+}
+
+.red {
+    border-color: ui.$app-color-red;
+    color: ui.$app-color-red;
+}

@@ -1,0 +1,10 @@
+@use '../../constants/ui-constants' as ui;
+
+.container {
+    margin: 50px auto auto;
+    width: 80%;
+    padding: 20px;
+    background: rgba(237,237,237,0.90);
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px 1px rgba(85,85,85,0.46);
+}

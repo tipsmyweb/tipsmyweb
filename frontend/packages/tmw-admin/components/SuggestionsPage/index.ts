@@ -1,0 +1,1 @@
+export { SuggestionsPage } from './SuggestionsPage';

@@ -1,0 +1,88 @@
+@use '../../constants/ui-constants' as ui;
+
+.scroll-arrow {
+    position: absolute;
+    z-index: 10;
+    margin-top: 160px;
+    width: 40px;
+    height: 40px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.scroll-arrow-left {
+    left: 2%;
+}
+
+.scroll-arrow-right {
+    right: 2%;
+}
+
+.scroll-arrow-left-icon {
+    transform: rotate(90deg);
+    filter: drop-shadow( 0px 0px 3px rgba(0, 0, 0, .7));
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+
+    &:hover {
+        transform: rotate(90deg) scale(1.05);
+    }
+
+    &:active {
+        transform: rotate(90deg) scale(0.97);
+        transition: all .10s ease-in-out;
+    }
+}
+
+.scroll-arrow-right-icon {
+    transform: rotate(-90deg);
+    filter: drop-shadow( 0px 0px 3px rgba(0, 0, 0, .7));
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+
+    &:hover {
+        transform: rotate(-90deg) scale(1.05);
+    }
+
+    &:active {
+        transform: rotate(-90deg) scale(0.97);
+        transition: all .10s ease-in-out;
+    }
+}
+
+.results-list {
+    margin-top: 20px;
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    margin-left: calc(-6% / 0.88);
+    margin-right: calc(-6% / 0.88);
+    padding-left: calc(6% / 0.88 - 20px);
+    padding-right: calc(6% / 0.88 - 20px);
+    mask-image: linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 5%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, rgba(0,0,0,0.9) 95%, rgba(0,0,0,0.2) 100%);
+    -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,0.2)), color-stop(5%, rgba(0,0,0,0.9)), color-stop(6%, rgba(0,0,0,1)), color-stop(94%, rgba(0,0,0,1)), color-stop(95%, rgba(0,0,0,0.9)), color-stop(100%, rgba(0,0,0,0.2)));
+
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 20px;
+        padding-left: 0;
+        padding-right: 0;
+        mask-image: none;
+        -webkit-mask-image: none;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

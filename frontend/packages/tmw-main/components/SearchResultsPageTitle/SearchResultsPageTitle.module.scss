@@ -1,0 +1,57 @@
+@use '../../constants/ui-constants' as ui;
+
+$search-tag-left-margin: 10px;
+$search-tag-left-margin-mobile: 5px;
+
+.title {
+    margin: 0 auto 8px;
+    text-align: left;
+    font-family: ui.$app-font-regular;
+    font-size: ui.$app-font-size-extra-large;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        margin-top: 30px;
+        font-size: 6vw;
+        text-align: center;
+    }
+}
+
+.subtitle {
+    text-align: left;
+    font-family: ui.$app-font-regular;
+    font-size: 15px;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        font-size: 3.5vw;
+        text-align: center;
+    }
+}
+
+.title-emphasis {
+    font-family: ui.$app-font-semi-bold;
+}
+
+.primary-search-tag-separator {
+    font-family: ui.$app-font-semi-bold;
+}
+
+.primary-search-tag {
+    font-family: ui.$app-font-semi-bold;
+    margin-left: $search-tag-left-margin;
+    cursor: pointer;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        margin-left: $search-tag-left-margin-mobile;
+    }
+}
+
+.secondary-search-tag,  .secondary-search-tag-separator {
+    font-family: ui.$app-font-regular;
+    margin-left: $search-tag-left-margin;
+    opacity: 0.8;
+    cursor: pointer;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        margin-left: $search-tag-left-margin-mobile;
+    }
+}

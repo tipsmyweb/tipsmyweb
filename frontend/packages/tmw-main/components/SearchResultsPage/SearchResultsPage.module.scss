@@ -1,0 +1,47 @@
+@use '../../constants/ui-constants' as ui;
+
+.search-results-page {
+    width: 88%;
+    margin: 0 auto;
+}
+
+.top-spacing {
+    width: 100%;
+    margin: 20px 0 0;
+    height: calc(12vh - 70px);
+}
+
+.no-results {
+    margin-top: 70px;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        text-align:center;
+    }
+}
+
+.no-results-image {
+    width: 300px;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        width: 80%;
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.button {
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        margin-top: 10px;
+    }
+}

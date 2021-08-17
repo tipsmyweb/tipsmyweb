@@ -1,0 +1,25 @@
+@use '../../constants/ui-constants' as ui;
+
+.header-modal {
+    margin-top: 20px;
+    z-index: 1000;
+}
+
+.container {
+    width: 370px;
+    padding: 20px;
+    background: rgba(237,237,237,0.90);
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px 1px rgba(85,85,85,0.46);
+}
+
+.arrow {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    margin-left: 20px; /* To compensate Popper's preventOverflow padding */
+    margin-top: -1em;
+    border-right : 8px solid transparent;
+    border-bottom : 10px solid rgba(237,237,237,0.90);
+    border-left : 7px solid transparent;
+}

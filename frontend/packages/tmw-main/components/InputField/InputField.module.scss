@@ -1,0 +1,72 @@
+@use '../../constants/ui-constants' as ui;
+
+.input-field {
+    margin-bottom: 15px;
+}
+
+.textarea, .input {
+    font-size: ui.$app-font-size-medium;
+    font-family: ui.$app-font-light;
+    padding: 10px;
+    background-color: #f8f8f8;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 0;
+    outline: none;
+    margin-bottom: 0;
+    transition: background-color 0.2s ease-in-out;
+
+    &:focus {
+        background-color: white;
+    }
+}
+
+.textarea {
+    resize: none;
+    margin-bottom: -3px;
+}
+
+.input {
+    height: 40px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.disabled {
+    background-color: #f1f1f1;
+    color: #666666;
+}
+
+.invalid {
+    border: 1px solid ui.$app-color-background-red;
+}
+
+.validation {
+    margin-top: 4px;
+    margin-left: 3px;
+    margin-right: 3px;
+    position: relative;
+
+    font-size: ui.$app-font-size-small;
+    font-family: ui.$app-font-medium;
+}
+
+.validation-message {
+    color: ui.$app-color-background-red;
+    text-align: left;
+    padding-right: 30px;
+}
+
+.characters-counter {
+    color: #7e7e7e;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: color 0.2s ease-in-out;
+}
+
+.characters-counter-error {
+    color: ui.$app-color-background-red;
+}

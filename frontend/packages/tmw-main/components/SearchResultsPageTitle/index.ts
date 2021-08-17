@@ -1,0 +1,1 @@
+export { SearchResultsPageTitle } from './SearchResultsPageTitle';

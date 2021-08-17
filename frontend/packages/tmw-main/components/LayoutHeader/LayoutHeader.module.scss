@@ -1,0 +1,99 @@
+@use '../../constants/ui-constants' as ui;
+
+.layout-header {
+    width: 88%;
+    margin: auto auto 10px;
+    padding-top: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        flex-direction: column;
+    }
+}
+
+.logo {
+    width: 80px;
+    vertical-align: middle;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        width: 50px;
+    }
+}
+
+.logo-name {
+    font-size : ui.$app-font-size-large;
+    font-family: ui.$app-font-medium;
+    color: white;
+    text-align: center;
+    margin: 0;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.links {
+    text-align: right;
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        text-align: center;
+        margin-top: 15px;
+    }
+}
+
+.link-icon {
+    display: inline-flex;
+    align-self: center;
+    margin-right: 4px;
+
+    svg {
+        height:1em;
+        width:1em;
+
+        top: 2px;
+        position: relative;
+    }
+}
+
+.link {
+    font-family: ui.$app-font-medium;
+    font-size: ui.$app-font-size-medium;
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+
+    &:hover .underline-effect::before {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.underline-effect {
+    position: relative;
+    display: inline-block;
+    color: white;
+
+    &::before {
+        position: absolute;
+        height: 2px;
+        margin: 0 auto;
+        content: '';
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: white;
+        bottom: -3px;
+        clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+        transition: clip-path 275ms ease;
+    }
+}
