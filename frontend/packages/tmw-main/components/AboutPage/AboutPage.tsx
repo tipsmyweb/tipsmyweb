@@ -12,7 +12,7 @@ export const AboutPage: React.FunctionComponent = () => {
                 <div className={styles.header}>About us</div>
                 <div className={styles.content}>
                     <p>
-                        TipsMyWeb is giving you the best resources in a specific field. These
+                        TipsMyWeb 2 is giving you the best resources in a specific field. These
                         websites that you normally discover after 2 years in a specific domain.
                     </p>
                     <p>
