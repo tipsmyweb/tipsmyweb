@@ -87,3 +87,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('stats/resources/trend', 'StatsController@getTopTrendyResources');
     Route::get('stats/resources/alltime', 'StatsController@getTopAllTimeResources');
 });
+
+# Server Access Routes
+Route::group(['middleware' => 'server.access'], function () {
+    Route::get('monitoring/urls', 'ResourceController@getResourcesUrls');
+});
