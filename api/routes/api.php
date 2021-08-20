@@ -90,5 +90,7 @@ Route::group(['middleware' => 'admin'], function () {
 
 # Server Access Routes
 Route::group(['middleware' => 'server.access'], function () {
-    Route::get('monitoring/urls', 'ResourceController@getResourcesUrls');
+
+    # Monitoring - Resources
+    Route::get('monitoring/urls', 'MonitoringController@getResourcesUrls');
 });

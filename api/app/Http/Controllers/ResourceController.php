@@ -244,16 +244,4 @@ class ResourceController extends Controller
         StatResource::launchStatResourceJob($resource->id, 'visit');
         return response()->json();
     }
-
-    public function getResourcesUrls()
-    {
-        $resources = Resource::select('url')
-            ->get()
-            ->pluck('url')
-            ->toArray();
-
-        return response()
-            ->json($resources, 200)
-            ->setEncodingOptions(JSON_UNESCAPED_SLASHES);
-    }
 }

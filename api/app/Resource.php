@@ -255,5 +255,11 @@ class Resource extends Model
                 $this->uploadImage($file, $fileName, true);
             } catch (\Throwable $th) {}
         }
-    }    
+    }
+
+    public static function getResourcesUrls()
+    {
+        return Resource::select('url', 'name')
+            ->get();
+    }
 }
