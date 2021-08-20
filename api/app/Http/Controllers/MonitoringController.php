@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Resource;
+use App\Services\MailSender;
 
 class MonitoringController extends Controller
 {
@@ -14,3 +15,9 @@ class MonitoringController extends Controller
             ->json($resources, 200)
             ->setEncodingOptions(JSON_UNESCAPED_SLASHES);
     }
+
+    public function resourcesUrlMonitoringJobFailed()
+    {
+        MailSender::sendJobFailedEmail('Resources URL Availability Monitoring');
+    }
+

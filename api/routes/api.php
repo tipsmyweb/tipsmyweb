@@ -93,4 +93,6 @@ Route::group(['middleware' => 'server.access'], function () {
 
     # Monitoring - Resources
     Route::get('monitoring/urls', 'MonitoringController@getResourcesUrls');
+    Route::get('monitoring/urls/failed', 'MonitoringController@resourcesUrlMonitoringJobFailed');
+    
 });
