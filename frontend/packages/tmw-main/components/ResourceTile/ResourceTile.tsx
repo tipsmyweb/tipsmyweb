@@ -4,7 +4,6 @@ import { useCookies } from 'react-cookie';
 import { ResourcePricingPill } from 'tmw-main/components/ResourcePricingPill';
 import { RESOURCES_BASE_URL, VIEWPORT_BREAKPOINTS } from 'tmw-main/constants/app-constants';
 import { useViewport } from 'tmw-common/components/ViewportProvider';
-import { ArrowRightIcon } from 'tmw-main/icons/ArrowRightIcon';
 import { ajaxGet } from 'tmw-common/utils/ajax';
 import { Resource } from 'tmw-main/constants/app-types';
 import heartIcon from 'tmw-main/assets/images/heart.svg';
@@ -26,7 +25,8 @@ export const ResourceTile: React.FunctionComponent<ResourceTileProps> = ({ resou
 
     const [isImageLinkBroken, setIsImageLinkBroken] = React.useState<boolean>(false);
 
-    const likeResource = async (): Promise<void> => {
+    const likeResource = async (e: React.MouseEvent<HTMLImageElement>): Promise<void> => {
+        e.stopPropagation();
         if (isLiked) {
             setCookie(resource.id, 'false', { path: '/' });
             await ajaxGet(`resources/like/remove/${resource.id}`);
@@ -36,8 +36,9 @@ export const ResourceTile: React.FunctionComponent<ResourceTileProps> = ({ resou
         }
     };
 
-    const visitWebsite = async (resourceId: string): Promise<void> => {
-        await ajaxGet(`resources/visit/${resourceId}`);
+    const visitWebsite = async (): Promise<void> => {
+        window.open(resource.url, '_blank');
+        await ajaxGet(`resources/visit/${resource.id}`);
     };
 
     const iconUrl =
@@ -52,7 +53,7 @@ export const ResourceTile: React.FunctionComponent<ResourceTileProps> = ({ resou
     };
 
     return (
-        <div className={styles.resourceTile}>
+        <div className={styles.resourceTile} onClick={visitWebsite}>
             <div className={styles.container}>
                 {!isMobileViewport ? (
                     <div className={styles.header}>
@@ -83,18 +84,6 @@ export const ResourceTile: React.FunctionComponent<ResourceTileProps> = ({ resou
                     <p className={styles.description}>{resource.description}</p>
                 </div>
             </div>
-            <a
-                href={resource.url}
-                onClick={(): Promise<void> => visitWebsite(resource.id)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.visitResourceButton}
-            >
-                Open website
-                <span className={styles.visitResourceButtonIcon}>
-                    <ArrowRightIcon fill="#434343" />
-                </span>
-            </a>
         </div>
     );
 };

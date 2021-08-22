@@ -5,11 +5,15 @@
     display: inline-block;
     margin: 20px;
     width: 320px;
+    cursor: pointer;
+
+    transition: transform .2s ui.$app-curve-in-out-cubic;
 
     &:hover {
         .icon {
             opacity: 1;
         }
+        transform: scale(1.01);
     }
 
     @media (max-width: ui.$app-viewport-breakpoint-mobile) {
@@ -23,6 +27,11 @@
     background: white;
     border-radius: 5px;
     overflow: hidden;
+    transition: filter .2s ui.$app-curve-in-out-cubic;
+
+    &:hover {
+        filter: drop-shadow(3px 3px 5px rgba(46,46,46,0.50));
+    }
 }
 
 .header {
@@ -59,7 +68,7 @@
     object-fit: cover;
     background: white;
 
-    transition: opacity .3s ui.$app-curve-in-out-cubic;
+    transition: opacity .2s ui.$app-curve-in-out-cubic;
     opacity: 0.85;
 
     @media (max-width: ui.$app-viewport-breakpoint-mobile) {
@@ -117,45 +126,5 @@
 
     &:active {
         transform: scale(0.97);
-    }
-}
-
-.visit-resource-button {
-    position: absolute;
-    bottom: -10px;
-    right: 20px;
-    overflow: hidden;
-
-    font-family: ui.$app-font-regular;
-    font-size: 12px;
-    padding: 6px 20px;
-    text-decoration: none;
-
-    color: #434343;
-    background-color: white;
-    filter: drop-shadow(2px 2px 3px rgba(46,46,46,0.50));
-    border-radius: 13px;
-
-    &:hover .visit-resource-button-icon svg {
-        margin-right: 1em;
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
-
-.visit-resource-button-icon {
-    display: inline-flex;
-    align-self: center;
-    margin-left: 0.5em;
-    margin-right: -1.5em;
-
-    svg {
-        width: 1em;
-        transform: translateX(10px);
-        transition: all .2s ui.$app-curve-in-out-cubic;
-        opacity: 0;
-
-        top: 2px;
-        position: relative;
     }
 }
