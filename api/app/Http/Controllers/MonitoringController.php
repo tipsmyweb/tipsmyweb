@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Resource;
 use App\Services\MailSender;
+use Illuminate\Http\Request;
 
 class MonitoringController extends Controller
 {
@@ -21,3 +22,10 @@ class MonitoringController extends Controller
         MailSender::sendJobFailedEmail('Resources URL Availability Monitoring');
     }
 
+    public function sendResourcesUrlsAvailabilityResults(Request $request)
+    {
+        $results = $request->results;
+
+        MailSender::sendJUrlsAvailabilityResultsEmail($results);
+    }
+}

@@ -28,18 +28,6 @@ class MailSender
         });
     }
 
-    public static function send_resource_websites_availability_alert($unavailable_resources)
-    {
-        $subject = 'Tips My Web - Sites Web inaccessibles';
-        $receiver = config('mail.reveiver.admin');
-
-        Mail::send('resource_websites_availability_alert', ['unavailable_resources' => $unavailable_resources], function($message) use ($subject, $receiver) {
-            $message->to($receiver);
-            $message->from(config('mail.username'));
-            $message->subject($subject);
-        });
-    }
-
     public static function sendJobFailedEmail($job_name)
     {
         $subject = '[JobFailed] Tips My Web - '.$job_name;
@@ -49,6 +37,22 @@ class MailSender
         Mail::send(
             'job_failed',
             ['job_name' => $job_name],
+            function($message) use ($subject, $receiver, $sender){
+                $message->to($receiver);
+                $message->from($sender);
+                $message->subject($subject);
+            });
+    }
+
+    public static function sendJUrlsAvailabilityResultsEmail($results)
+    {
+        $subject = 'Tips My Web - URLs Availability';
+        $receiver = MailSender::GetAdminEmailReceiver();
+        $sender = MailSender::GetTmwMailUsername();
+
+        Mail::send(
+            'urls_availability',
+            ['results' => $results],
             function($message) use ($subject, $receiver, $sender){
                 $message->to($receiver);
                 $message->from($sender);
