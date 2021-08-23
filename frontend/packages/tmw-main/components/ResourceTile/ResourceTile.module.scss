@@ -79,17 +79,25 @@
     }
 }
 
+.content-header {
+    width: 100%;
+    display: flex;
+}
+
 .title {
     color: black;
     font-size: 15px;
     font-family: ui.$app-font-medium;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.title-float-right {
-    float: right;
-
+.content-header-right {
     display: flex;
     align-items: center;
+    margin-left: 8px;
 }
 
 .description {
@@ -102,6 +110,7 @@
     text-overflow: ellipsis;
     overflow-wrap: break-word;
     max-height: 83px;
+    margin-top: 0;
 }
 
 .like-resource-button {

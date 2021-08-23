@@ -68,18 +68,20 @@ export const ResourceTile: React.FunctionComponent<ResourceTileProps> = ({ resou
                     onError={onImageLoadingFailed}
                 />
                 <div className={styles.content}>
-                    <div className={styles.titleFloatRight}>
-                        <ResourcePricingPill pricing={resource.pricing} />
-                        <span className={styles.likeResourceButton}>
-                            <img
-                                src={isLiked ? heartFullIcon : heartIcon}
-                                alt={isLiked ? 'Unlike' : 'Like'}
-                                height="15px"
-                                onClick={likeResource}
-                            />
-                        </span>
+                    <div className={styles.contentHeader}>
+                        <p className={styles.title}>{resource.name}</p>
+                        <div className={styles.contentHeaderRight}>
+                            <ResourcePricingPill pricing={resource.pricing} />
+                            <span className={styles.likeResourceButton}>
+                                <img
+                                    src={isLiked ? heartFullIcon : heartIcon}
+                                    alt={isLiked ? 'Unlike' : 'Like'}
+                                    height="15px"
+                                    onClick={likeResource}
+                                />
+                            </span>
+                        </div>
                     </div>
-                    <p className={styles.title}>{resource.name}</p>
                     <p className={styles.description}>{resource.description}</p>
                 </div>
             </div>
