@@ -37,6 +37,9 @@ Route::get('test', 'TestController@execute');
 
 Route::post('search/admin', 'SearchController@adminGeneralSearch');
 
+# Analytics
+Route::get('analytics/{route}', 'AnalyticsController@proxyQuery');
+
 # Admin routes
 Route::group(['middleware' => 'admin'], function () {
 
