@@ -46,8 +46,8 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactNode {
                 {/*    async*/}
                 {/*    src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}*/}
                 {/*/>*/}
-                <script src={"/analytics.js"}/>
-              <script src={"/monitoring.js"}/>
+                <script src={'/analytics.js'} />
+                <script src={'/monitoring.js'} />
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `
