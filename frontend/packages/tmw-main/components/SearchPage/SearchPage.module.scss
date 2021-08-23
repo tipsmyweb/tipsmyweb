@@ -19,7 +19,7 @@
     margin-top: 0;
     margin-bottom: 15px;
 
-    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+    @media (max-width: ui.$app-viewport-breakpoint-tablet) {
         font-size: 6vw;
     }
 }
