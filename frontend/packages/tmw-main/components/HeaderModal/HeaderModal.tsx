@@ -15,18 +15,25 @@ export const HeaderModal: React.FunctionComponent<HeaderModalProps> = ({ childre
     };
 
     const modalRef = React.useRef<HTMLDivElement>(null);
+    const targetRef = React.useRef<HTMLSpanElement>(null);
 
     const handleClickOutside = (event: MouseEvent): void => {
         // NOTE: 'as Node' is a hacky workaround as TS can't infer that event.target is necessarily a Node here.
-        if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        if (
+            isOpen &&
+            modalRef.current &&
+            !modalRef.current.contains(event.target as Node) &&
+            targetRef.current &&
+            !targetRef.current.contains(event.target as Node)
+        ) {
             setIsOpen(false);
         }
     };
 
     React.useEffect(() => {
-        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('mouseup', handleClickOutside);
         return (): void => {
-            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('mouseup', handleClickOutside);
         };
     });
 
@@ -35,7 +42,7 @@ export const HeaderModal: React.FunctionComponent<HeaderModalProps> = ({ childre
             <Reference>
                 {({ ref }): React.ReactNode => (
                     <span ref={ref} onClick={toggleIsOpen}>
-                        {target}
+                        <span ref={targetRef}>{target}</span>
                     </span>
                 )}
             </Reference>
