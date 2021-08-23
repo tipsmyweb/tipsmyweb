@@ -42,10 +42,12 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactNode {
                 <meta name="theme-color" content="#f46d7b" />
 
                 {/* Global Site Tag (gtag.js) - Google Analytics */}
-                <script
-                    async
-                    src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-                />
+                {/*<script*/}
+                {/*    async*/}
+                {/*    src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}*/}
+                {/*/>*/}
+                <script src={'/analytics.js'} />
+                <script src={'/monitoring.js'} />
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `
