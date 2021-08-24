@@ -9,12 +9,13 @@
 .top-spacing {
     width: 100%;
     margin: 20px 0 0;
-    height: calc(17vh - 70px);
+    height: calc(18vh - 100px);
 }
 
 .title {
-    --font-size: min(45px, 6vh, 6vw);
-    --min-font-size: 35px;
+    --font-size: min(45px, 5.5vh, 6vw);
+    --min-font-size: 40px;
+    --mobile-font-size: min(45px, 6vh, 6vw);
     --mobile-min-font-size: 28px;
 
     font-family: ui.$app-font-regular;
