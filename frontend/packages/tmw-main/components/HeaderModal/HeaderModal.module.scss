@@ -1,7 +1,6 @@
 @use '../../constants/ui-constants' as ui;
 
 .header-modal {
-    margin-top: 20px;
     z-index: 1000;
 }
 
@@ -17,7 +16,7 @@
     position: absolute;
     top: 6px;
     left: 0;
-    margin-left: 20px; /* To compensate Popper's preventOverflow padding */
+    margin-left: 10px; /* To compensate Popper's preventOverflow padding */
     margin-top: -1em;
     border-right : 8px solid transparent;
     border-bottom : 10px solid rgba(237,237,237,0.90);
