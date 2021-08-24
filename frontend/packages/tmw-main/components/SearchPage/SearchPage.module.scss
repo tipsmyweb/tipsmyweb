@@ -13,14 +13,18 @@
 }
 
 .title {
+    --font-size: min(45px, 6vh, 6vw);
+    --min-font-size: 35px;
+    --mobile-min-font-size: 28px;
+
     font-family: ui.$app-font-regular;
     text-align: center;
-    font-size: ui.$app-font-size-extra-extra-large;
+    font-size: max(var(--min-font-size), var(--font-size));
     margin-top: 0;
     margin-bottom: 15px;
 
     @media (max-width: ui.$app-viewport-breakpoint-tablet) {
-        font-size: 6vw;
+        font-size: max(var(--mobile-min-font-size), var(--font-size));
     }
 }
 
