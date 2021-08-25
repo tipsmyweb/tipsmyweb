@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Jobs\StatResourceJob;
+use App\Jobs\Stats\StatResourceJob;
 use Illuminate\Database\Eloquent\Model;
 use App\Services\DateUtils;
 use DB;
