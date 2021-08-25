@@ -65,9 +65,14 @@
         margin-top: 0;
         opacity: 1;
 
+        background: none;
+        color: white;
+
         transition: opacity 0.3s ease-in-out;
 
         @media (max-width: ui.$app-viewport-breakpoint-mobile) {
+            background-color: rgba(255, 255, 255, 0.7);
+            color: ui.$app-color-background-red;
             font-size: 12px;
             padding: 8px 25px;
         }
