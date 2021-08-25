@@ -14,7 +14,7 @@ export const LayoutHeader: React.FunctionComponent = () => {
     const { width } = useViewport();
     const isMobileViewport = width < VIEWPORT_BREAKPOINTS.MOBILE;
 
-    const newSearchLink = `${MAIN_APP_ROUTES.HOME}?new=1`;
+    const newSearchLink = `${MAIN_APP_ROUTES.HOME}?newSearch=1`;
 
     const links = [
         {
