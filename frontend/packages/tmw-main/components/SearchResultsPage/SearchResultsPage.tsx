@@ -49,12 +49,13 @@ export const SearchResultsPage: React.FunctionComponent = () => {
     };
 
     React.useEffect(() => {
+        if (!router.isReady) return;
         const parsedSearchTags =
             searchTags && typeof searchTags === 'string' ? parseSearchTags(searchTags) : [];
         fetchSearchResults(parsedSearchTags).finally(() => {
             setIsLoading(false);
         });
-    }, []);
+    }, [router.isReady]);
 
     const hasResults = resultResources.length > 0;
 

@@ -99,14 +99,12 @@ export const TagsSelector: React.FunctionComponent = () => {
     }, [router.isReady]);
 
     React.useEffect(() => {
-        const handleRouteChange = (url: string) => {
-            if (url != null && url.includes('new')) {
-                setSelectedMainTag(undefined);
-                setSelectedRelatedTags([]);
-            }
-        };
-        router.events.on('routeChangeStart', handleRouteChange);
-    }, []);
+        const { newSearch } = router.query;
+        if (newSearch) {
+            setSelectedMainTag(undefined);
+            setSelectedRelatedTags([]);
+        }
+    }, [router.query]);
 
     let barPercentage = 0;
     barPercentage += selectedMainTag ? 20 : 0;

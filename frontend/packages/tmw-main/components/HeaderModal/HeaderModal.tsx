@@ -49,7 +49,10 @@ export const HeaderModal: React.FunctionComponent<HeaderModalProps> = ({ childre
             {isOpen ? (
                 <Popper
                     placement="bottom"
-                    modifiers={[{ name: 'preventOverflow', options: { padding: 80 } }]}
+                    modifiers={[
+                        { name: 'preventOverflow', options: { padding: 20 } },
+                        { name: 'offset', options: { offset: [-100, 20] } },
+                    ]}
                 >
                     {({ ref, style, placement, arrowProps }): React.ReactNode => (
                         <div

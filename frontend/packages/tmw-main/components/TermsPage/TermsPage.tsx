@@ -266,7 +266,9 @@ export const TermsPage: React.FunctionComponent = () => {
                 </div>
                 <div className={styles.backButton}>
                     <Link href={MAIN_APP_ROUTES.HOME}>
-                        <Button content="Back to Home Page" icon={ArrowRightIcon} />
+                        <span>
+                            <Button content="Back to Home Page" icon={ArrowRightIcon} />
+                        </span>
                     </Link>
                 </div>
             </div>
