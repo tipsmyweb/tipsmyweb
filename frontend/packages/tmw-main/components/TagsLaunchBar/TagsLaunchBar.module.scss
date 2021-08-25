@@ -1,21 +1,21 @@
 @use '../../constants/ui-constants' as ui;
 
 .tags-launch-bar {
-    background-color: rgba(255,255,255,0.90);
     border-radius: 100px;
     margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
-    transition: width 0.2s ease-in-out, transform 0.15s ease-in-out;
+    transition: width 0.2s ease-in-out, transform 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    color: ui.$app-color-background-red;
     font-size: ui.$app-font-size-large;
 }
 
 .button {
+    background-color: rgba(255,255,255,0.90);
+    color: ui.$app-color-background-red;
     box-shadow: 0 1px 4px 0 rgba(50,50,50,0.5);
     cursor: pointer;
 

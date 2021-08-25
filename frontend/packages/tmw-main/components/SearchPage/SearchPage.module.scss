@@ -9,18 +9,23 @@
 .top-spacing {
     width: 100%;
     margin: 20px 0 0;
-    height: calc(17vh - 70px);
+    height: calc(18vh - 100px);
 }
 
 .title {
+    --font-size: min(45px, 5.5vh, 6vw);
+    --min-font-size: 40px;
+    --mobile-font-size: min(45px, 6vh, 6vw);
+    --mobile-min-font-size: 28px;
+
     font-family: ui.$app-font-regular;
     text-align: center;
-    font-size: ui.$app-font-size-extra-large;
+    font-size: max(var(--min-font-size), var(--font-size));
     margin-top: 0;
     margin-bottom: 15px;
 
-    @media (max-width: ui.$app-viewport-breakpoint-mobile) {
-        font-size: 6vw;
+    @media (max-width: ui.$app-viewport-breakpoint-tablet) {
+        font-size: max(var(--mobile-min-font-size), var(--font-size));
     }
 }
 
@@ -30,7 +35,7 @@
 
 .help-container {
     text-align: center;
-    margin-top: 100px;
+    margin-top: min(100px, 8vh);
 }
 
 .help-content {
@@ -60,14 +65,9 @@
         margin-top: 0;
         opacity: 1;
 
-        background: none;
-        color: white;
-
         transition: opacity 0.3s ease-in-out;
 
         @media (max-width: ui.$app-viewport-breakpoint-mobile) {
-            background-color: rgba(255, 255, 255, 0.7);
-            color: ui.$app-color-background-red;
             font-size: 12px;
             padding: 8px 25px;
         }

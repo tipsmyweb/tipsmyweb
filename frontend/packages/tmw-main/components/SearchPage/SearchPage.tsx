@@ -14,8 +14,11 @@ export const SearchPage: React.FunctionComponent = () => {
                 <DocumentHead title="Home" />
                 <div className={styles.topSpacing} />
                 <p className={styles.title}>
-                    Let&apos;s find the most <span className={styles.titleBold}>useful</span>{' '}
-                    websites for your <span className={styles.titleBold}>workflow</span>
+                    Let&apos;s find
+                    <br />
+                    the most <span className={styles.titleBold}>useful websites</span>
+                    <br />
+                    for your <span className={styles.titleBold}>workflow</span>
                 </p>
                 <TagsSelector />
                 <div className={styles.helpContainer}>
