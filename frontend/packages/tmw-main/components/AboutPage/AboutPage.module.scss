@@ -6,7 +6,7 @@
     font-family: ui.$app-font-regular;
 
     margin: auto;
-    width: 75%;
+    width: 85%;
 
     @media (max-width: ui.$app-viewport-breakpoint-mobile) {
         width: 85%;
@@ -15,18 +15,59 @@
 
 .header {
     text-align: center;
-    margin-bottom: 30px;
-    margin-top: 40px;
+}
 
-    font-size: ui.$app-font-size-extra-large;
+.header-title {
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-size: 70px;
     font-family: ui.$app-font-medium;
 }
 
-.content {
-    margin-bottom: 30px;
+.header-text {
+    font-size: ui.$app-font-size-large;
+    font-family: ui.$app-font-regular;
+    max-width: 800px;
+    margin: auto;
+}
 
-    p {
-        text-align: justify;
-        width: 100%;
-    }
+.header-image {
+    width: 35vw;
+    max-width: 400px;
+    margin-left: 40px;
+}
+
+.team-members {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.team-member-column {
+    flex: 1 1 0;
+    padding: 20px;
+    min-width: 250px;
+    max-width: 500px;
+}
+
+.profile-picture-container {
+    filter: drop-shadow(0 0 4px rgba(50,50,50,0.3));
+}
+
+.profile-picture {
+    border-radius: 50%;
+}
+
+.team-member-name {
+    margin-top: 10px;
+    font-family: ui.$app-font-medium;
+    font-size: ui.$app-font-size-large;
+}
+
+.team-member-text {
+    margin-top: 15px;
+    font-family: ui.$app-font-regular;
+    font-size: ui.$app-font-size-medium;
 }
