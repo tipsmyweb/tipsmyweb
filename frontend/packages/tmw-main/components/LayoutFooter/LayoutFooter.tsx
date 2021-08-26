@@ -25,14 +25,14 @@ export const LayoutFooter: React.FunctionComponent = () => (
             </p>
         </div>
         <div>
-            <a href={EXTERNAL_LINKS.INSTAGRAM} target="_blank">
+            <a href={EXTERNAL_LINKS.INSTAGRAM} target="_blank" rel="noreferrer">
                 <img
                     src={instagram.src}
                     alt="Share on Instagram"
                     className={styles.socialLinkImg}
                 />
             </a>
-            <a href={EXTERNAL_LINKS.FACEBOOK} target="_blank">
+            <a href={EXTERNAL_LINKS.FACEBOOK} target="_blank" rel="noreferrer">
                 <img
                     src={facebookLogo.src}
                     alt="Share on Facebook"
