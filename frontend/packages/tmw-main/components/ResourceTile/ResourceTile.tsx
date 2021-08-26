@@ -44,7 +44,7 @@ export const ResourceTile: React.FunctionComponent<ResourceTileProps> = ({ resou
     const iconUrl =
         resource.iconFilename && !isImageLinkBroken
             ? RESOURCES_BASE_URL + resource.id
-            : defaultResourceImage;
+            : defaultResourceImage.src;
 
     const onImageLoadingFailed = (): void => {
         if (!isImageLinkBroken) {
@@ -75,7 +75,7 @@ export const ResourceTile: React.FunctionComponent<ResourceTileProps> = ({ resou
                             <ResourcePricingPill pricing={resource.pricing} />
                             <span className={styles.likeResourceButton}>
                                 <img
-                                    src={isLiked ? heartFullIcon : heartIcon}
+                                    src={isLiked ? heartFullIcon.src : heartIcon.src}
                                     alt={isLiked ? 'Unlike' : 'Like'}
                                     height="15px"
                                     onClick={likeResource}

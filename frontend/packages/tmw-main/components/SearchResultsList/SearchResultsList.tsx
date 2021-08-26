@@ -75,7 +75,7 @@ export const SearchResultsList: React.FunctionComponent<SearchResultsListProps> 
                     {showLeftArrow ? (
                         <div className={classNames(styles.scrollArrow, styles.scrollArrowLeft)}>
                             <img
-                                src={chevronDownIcon}
+                                src={chevronDownIcon.src}
                                 alt="Scroll left"
                                 className={styles.scrollArrowLeftIcon}
                                 onClick={onLeftArrowClick}
@@ -86,7 +86,7 @@ export const SearchResultsList: React.FunctionComponent<SearchResultsListProps> 
                     {showRightArrow ? (
                         <div className={classNames(styles.scrollArrow, styles.scrollArrowRight)}>
                             <img
-                                src={chevronDownIcon}
+                                src={chevronDownIcon.src}
                                 alt="Scroll right"
                                 className={styles.scrollArrowRightIcon}
                                 onClick={onRightArrowClick}

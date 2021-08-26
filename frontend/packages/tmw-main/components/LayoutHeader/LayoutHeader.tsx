@@ -42,14 +42,14 @@ export const LayoutHeader: React.FunctionComponent = () => {
             {!isMobileViewport ? (
                 <Link href={newSearchLink}>
                     <a>
-                        <img src={logo} alt="logo" className={styles.logo} />
+                        <img src={logo.src} alt="logo" className={styles.logo} />
                     </a>
                 </Link>
             ) : (
                 <p className={styles.logoName}>
                     <Link href={MAIN_APP_ROUTES.HOME}>
                         <a>
-                            <img src={logo} alt="logo" className={styles.logo} />
+                            <img src={logo.src} alt="logo" className={styles.logo} />
                             TipsMyWeb
                         </a>
                     </Link>

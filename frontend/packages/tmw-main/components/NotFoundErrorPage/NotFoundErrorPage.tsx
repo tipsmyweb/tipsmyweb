@@ -13,7 +13,7 @@ export const NotFoundErrorPage: React.FunctionComponent = () => {
         <div className={styles.notFoundErrorPage}>
             <DocumentHead title="Page not found" />
             <div className={styles.content}>
-                <img src={notFoundErrorIcon} alt="Not Found" className={styles.image} />
+                <img src={notFoundErrorIcon.src} alt="Not Found" className={styles.image} />
                 <div className={styles.title}>Page not found</div>
                 <div className={styles.subtitle}>We sincerely apologize</div>
             </div>

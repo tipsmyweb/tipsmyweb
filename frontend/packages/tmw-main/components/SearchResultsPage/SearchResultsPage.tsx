@@ -81,7 +81,7 @@ export const SearchResultsPage: React.FunctionComponent = () => {
                 ) : (
                     <div className={styles.noResults}>
                         <img
-                            src={noResultsImage}
+                            src={noResultsImage.src}
                             alt="Not Found"
                             className={styles.noResultsImage}
                         />
