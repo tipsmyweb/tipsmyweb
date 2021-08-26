@@ -37,3 +37,8 @@ export enum VALIDATION {
     DESCRIPTION_MAX_LENGTH = 250,
     DESCRIPTION_MIN_LENGTH = 10,
 }
+
+export enum EXTERNAL_LINKS {
+    INSTAGRAM = 'https://www.instagram.com/tipsmyweb/',
+    FACEBOOK = 'https://www.facebook.com/tipsmyweb/',
+}
