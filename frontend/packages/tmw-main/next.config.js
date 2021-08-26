@@ -1,8 +1,7 @@
-const withImages = require('next-images');
 const withPlugins = require('next-compose-plugins');
 const withTM = require('next-transpile-modules')(['tmw-common']);
 
-module.exports = withPlugins([withTM, withImages], {
+module.exports = withPlugins([withTM], {
     webpack: config => {
         const rules = config.module.rules
             .find(rule => typeof rule.oneOf === 'object')
