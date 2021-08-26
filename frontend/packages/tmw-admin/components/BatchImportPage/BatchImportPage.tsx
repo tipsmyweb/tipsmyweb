@@ -80,7 +80,7 @@ export const BatchImportPage: React.FunctionComponent = () => {
         _: React.SyntheticEvent<HTMLElement>,
         data: DropdownProps,
     ): void => {
-        setImportType(data.searchQuery ?? '');
+        setImportType(data.value?.toString() ?? '');
     };
 
     const onFileInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
