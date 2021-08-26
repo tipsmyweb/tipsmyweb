@@ -8,14 +8,13 @@
 
 .top-spacing {
     width: 100%;
-    margin: 20px 0 0;
-    height: calc(18vh - 100px);
+    height: calc(38vh - 248px);
 }
 
 .title {
-    --font-size: min(45px, 5.5vh, 6vw);
-    --min-font-size: 40px;
-    --mobile-font-size: min(45px, 6vh, 6vw);
+    --font-size: min(40px, 5.1vh, 6vw);
+    --min-font-size: 35px;
+    --mobile-font-size: min(40px, 6vh, 6vw);
     --mobile-min-font-size: 28px;
 
     font-family: ui.$app-font-regular;
@@ -35,7 +34,7 @@
 
 .help-container {
     text-align: center;
-    margin-top: min(100px, 8vh);
+    margin-top: min(100px, 5vh);
 }
 
 .help-content {
