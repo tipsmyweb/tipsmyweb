@@ -83,7 +83,7 @@ class ResourceRequest extends FormRequest
             'renown'  => [
                 'integer',
                 'min:1',
-                'max:3',
+                'max:10',
             ],
             'like'   =>  [
                 'nullable',
