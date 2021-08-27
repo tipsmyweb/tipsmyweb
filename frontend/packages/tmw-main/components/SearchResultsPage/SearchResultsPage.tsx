@@ -71,10 +71,12 @@ export const SearchResultsPage: React.FunctionComponent = () => {
                         mainSearchTag={mainSearchTag}
                         relatedSearchTags={relatedSearchTags}
                     />
-                    <ShareButton
-                        size={isMobileViewport ? SIZES.SMALL : SIZES.MEDIUM}
-                        className={styles.button}
-                    />
+                    {hasResults ? (
+                        <ShareButton
+                            size={isMobileViewport ? SIZES.SMALL : SIZES.MEDIUM}
+                            className={styles.button}
+                        />
+                    ) : null}
                 </div>
                 {isLoading || hasResults ? (
                     <SearchResultsList resultsList={resultResources} isLoading={isLoading} />

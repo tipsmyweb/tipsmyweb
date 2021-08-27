@@ -78,25 +78,27 @@
 }
 
 .content {
-    height: 140px;
-    margin-top: 12px;
-    margin-left: 15px;
-    margin-right: 15px;
+    display: flex;
+    flex-flow: column;
+    height: 120px;
+    padding: 15px;
 
     @media (max-width: ui.$app-viewport-breakpoint-mobile) {
-        height: 30vw;
+        height: auto;
     }
 }
 
 .content-header {
     width: 100%;
     display: flex;
+    margin-bottom: 10px;
 }
 
 .title {
     color: black;
     font-size: 15px;
     font-family: ui.$app-font-medium;
+    margin: 0;
 
     white-space: nowrap;
     overflow: hidden;
@@ -119,7 +121,7 @@
     text-overflow: ellipsis;
     overflow-wrap: break-word;
     max-height: 83px;
-    margin-top: 0;
+    flex: 1;
 }
 
 .like-resource-button {

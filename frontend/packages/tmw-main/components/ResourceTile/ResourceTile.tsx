@@ -83,7 +83,7 @@ export const ResourceTile: React.FunctionComponent<ResourceTileProps> = ({ resou
                             </span>
                         </div>
                     </div>
-                    <p className={styles.description}>{resource.description}</p>
+                    <div className={styles.description}>{resource.description}</div>
                 </div>
             </div>
         </div>
