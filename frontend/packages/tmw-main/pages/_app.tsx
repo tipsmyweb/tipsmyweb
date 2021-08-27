@@ -13,6 +13,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 fontawesomeConfig.autoAddCss = false;
 
 const DESCRIPTION = 'Discover great web resources to help with your day to day workflow.';
+const TITLE = 'TipsMyWeb - Find the best resources for your projects';
 const WEBSITE_URL = 'https://www.tipsmyweb.com/';
 const WEBSITE_IMAGE = 'https://www.tipsmyweb.com/og-image.png';
 
@@ -47,21 +48,21 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactNode {
                 <meta name="theme-color" content="#f46d7b" />
 
                 {/* Primary Meta Tags */}
-                <title>TipsMyWeb</title>
+                <title>{TITLE}</title>
                 <meta name="title" content="TipsMyWeb" />
                 <meta name="description" content={DESCRIPTION} />
 
                 {/* Open Graph / Facebook */}
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={WEBSITE_URL} />
-                <meta property="og:title" content="TipsMyWeb" />
+                <meta property="og:title" content={TITLE} />
                 <meta property="og:description" content={DESCRIPTION} />
                 <meta property="og:image" content={WEBSITE_IMAGE} />
 
                 {/* Twitter */}
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content={WEBSITE_URL} />
-                <meta property="twitter:title" content="TipsMyWeb" />
+                <meta property="twitter:title" content={TITLE} />
                 <meta property="twitter:description" content={DESCRIPTION} />
                 <meta property="twitter:image" content={WEBSITE_IMAGE} />
 
