@@ -146,21 +146,21 @@ export const ResourcesEditPage: React.FunctionComponent = () => {
         _: React.SyntheticEvent<HTMLElement>,
         data: DropdownProps,
     ): void => {
-        setResource({ ...resource, typeId: data.searchQuery });
+        setResource({ ...resource, typeId: data.value?.toString() });
     };
 
     const onResourceLanguageInputChange = (
         _: React.SyntheticEvent<HTMLElement>,
         data: DropdownProps,
     ): void => {
-        setResource({ ...resource, locale: data.searchQuery });
+        setResource({ ...resource, locale: data.value?.toString() });
     };
 
     const onResourcePriceIdInputChange = (
         _: React.SyntheticEvent<HTMLElement>,
         data: DropdownProps,
     ): void => {
-        setResource({ ...resource, priceId: data.searchQuery });
+        setResource({ ...resource, priceId: data.value?.toString() });
     };
 
     const onResourceDescriptionInputChange = (
