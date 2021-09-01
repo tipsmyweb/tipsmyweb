@@ -151,19 +151,26 @@ export const TagsSelector: React.FunctionComponent = () => {
                     )}
                     <div className={styles.tagOptions}>
                         {selectedMainTag
-                            ? selectedMainTag.relatedTags.map((tag: RelatedTag) => (
-                                  <Tag
-                                      key={tag.id}
-                                      content={tag.name}
-                                      isSelected={selectedRelatedTags
-                                          .map(tag => tag.id)
-                                          .includes(tag.id)}
-                                      onClickCallback={(): void => onRelatedTagClick(tag)}
-                                      size={SIZES.MEDIUM}
-                                  />
-                              ))
+                            ? selectedMainTag.relatedTags
+                                  .sort((a, b) => {
+                                      return a.name > b.name ? 1 : -1;
+                                  })
+                                  .map((tag: RelatedTag) => (
+                                      <Tag
+                                          key={tag.id}
+                                          content={tag.name}
+                                          isSelected={selectedRelatedTags
+                                              .map(tag => tag.id)
+                                              .includes(tag.id)}
+                                          onClickCallback={(): void => onRelatedTagClick(tag)}
+                                          size={SIZES.MEDIUM}
+                                      />
+                                  ))
                             : tags
                                   .filter(tag => tag.primary)
+                                  .sort((a, b) => {
+                                      return a.name > b.name ? 1 : -1;
+                                  })
                                   .map(tag => {
                                       return (
                                           <Tag
