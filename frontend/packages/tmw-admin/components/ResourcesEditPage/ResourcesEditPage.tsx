@@ -33,6 +33,7 @@ import {
 import { convertToSelectOptions, InputSelectOption } from 'tmw-admin/utils/select-options';
 import { buildTagsMap } from 'tmw-admin/utils/tags';
 import { ajaxGet, ajaxPost, ajaxPostImage, ajaxPut } from 'tmw-common/utils/ajax';
+import { convertResourceFileNameToImageName } from '../../utils/resource-image';
 
 const localNameOptions: InputSelectOption[] = Object.values(LOCALES).map(locale => ({
     key: locale,
@@ -83,7 +84,11 @@ export const ResourcesEditPage: React.FunctionComponent = () => {
 
     const updateImageFromResource = (resource: Resource): void => {
         if (resource.iconFilename)
-            setResourceImageTempURL(`${RESOURCES_IMAGE_BASE_URL}${resource.iconFilename}`);
+            setResourceImageTempURL(
+                `${RESOURCES_IMAGE_BASE_URL}${convertResourceFileNameToImageName(
+                    resource.iconFilename,
+                )}`,
+            );
     };
 
     const fetchPricesOptions = async (): Promise<void> => {
