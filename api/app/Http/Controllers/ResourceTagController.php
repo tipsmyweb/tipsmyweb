@@ -73,8 +73,7 @@ class ResourceTagController extends Controller
 
         // Stats, search tags
         foreach ($tag_ids as $tag_id) {
-            // TODO This line was making the app crash. This should be fixed
-            // StatTag::launchStatTagJob($tag_id, 'search');
+            StatTag::launchStatTagJob($tag_id, 'search');
         }
 
         // Split tags into main and related ones
