@@ -517,16 +517,22 @@ export const ResourcesEditPage: React.FunctionComponent = () => {
                                 <Segment attached secondary>
                                     {displayedTagOptions.length ? (
                                         <Label.Group style={{ marginBottom: '-0.5em' }}>
-                                            {displayedTagOptions.map(tag => (
-                                                <Label
-                                                    key={tag.key}
-                                                    as="a"
-                                                    onClick={(): void => addSelectedTag(tag.key)}
-                                                >
-                                                    <Icon name="plus" />
-                                                    {tag.text}
-                                                </Label>
-                                            ))}
+                                            {displayedTagOptions
+                                                .sort((a, b) => {
+                                                    return a.text > b.text ? 1 : -1;
+                                                })
+                                                .map(tag => (
+                                                    <Label
+                                                        key={tag.key}
+                                                        as="a"
+                                                        onClick={(): void =>
+                                                            addSelectedTag(tag.key)
+                                                        }
+                                                    >
+                                                        <Icon name="plus" />
+                                                        {tag.text}
+                                                    </Label>
+                                                ))}
                                         </Label.Group>
                                     ) : (
                                         <>No tags available!</>
