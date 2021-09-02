@@ -16,7 +16,12 @@ import {
 import { ActionMessage } from 'tmw-admin/components/ActionMessage';
 import { FormFooter } from 'tmw-admin/components/FormFooter';
 import { PageHeader } from 'tmw-admin/components/PageHeader';
-import { ADMIN_APP_ROUTES, LOCALES, LOCALES_NAMES } from 'tmw-admin/constants/app-constants';
+import {
+    ADMIN_APP_ROUTES,
+    LOCALES,
+    LOCALES_NAMES,
+    RESOURCES_IMAGE_BASE_URL,
+} from 'tmw-admin/constants/app-constants';
 import { Resource, TagsMap } from 'tmw-admin/constants/app-types';
 import {
     serializePricesFromAPI,
@@ -68,11 +73,17 @@ export const ResourcesEditPage: React.FunctionComponent = () => {
             .then(res => {
                 const resource = serializeResourceFromAPI(res.data);
                 setResource(resource);
+                updateImageFromResource(resource);
             })
             .catch(() => {
                 setErrorMessage('Error while fetching resource from the API.');
                 setCanEdit(false);
             });
+    };
+
+    const updateImageFromResource = (resource: Resource): void => {
+        if (resource.iconFilename)
+            setResourceImageTempURL(`${RESOURCES_IMAGE_BASE_URL}${resource.iconFilename}`);
     };
 
     const fetchPricesOptions = async (): Promise<void> => {
