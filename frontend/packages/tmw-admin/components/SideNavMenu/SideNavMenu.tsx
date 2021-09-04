@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useRouter } from 'next/router';
-import { Icon, Menu, MenuProps } from 'semantic-ui-react';
+import { Icon, Menu, MenuProps, Dropdown } from 'semantic-ui-react';
 import { SemanticWIDTHS } from 'semantic-ui-react/dist/commonjs/generic';
 import { ADMIN_APP_ROUTES } from 'tmw-admin/constants/app-constants';
 
@@ -120,8 +120,22 @@ export const SideNavMenu: React.FunctionComponent<SideNavMenuProps> = ({
                 const allPaths: string[] = !item.subMenu
                     ? [item.path]
                     : item.subMenu.map(subItem => subItem.path);
+                const hasSubMenu = item.subMenu;
 
-                return (
+                return hasSubMenu ? (
+                    <Dropdown item openOnFocus={true} text={item.name} icon={item.iconName}>
+                        {item.subMenu ? (
+                            <Dropdown.Menu>
+                                {item.subMenu.map(subItem => (
+                                    // eslint-disable-next-line react/jsx-key
+                                    <Dropdown.Item onClick={() => router.push(subItem.path)}>
+                                        {subItem.name}
+                                    </Dropdown.Item>
+                                ))}
+                            </Dropdown.Menu>
+                        ) : null}
+                    </Dropdown>
+                ) : (
                     <Menu.Item
                         name={item.name}
                         key={item.path}
@@ -130,20 +144,6 @@ export const SideNavMenu: React.FunctionComponent<SideNavMenuProps> = ({
                     >
                         <Icon className={item.iconName} />
                         {item.name}
-                        {item.subMenu && !horizontalDisplay ? (
-                            <Menu.Menu>
-                                {item.subMenu.map(subItem => (
-                                    <Menu.Item
-                                        name={subItem.name}
-                                        key={subItem.path}
-                                        active={router.pathname === subItem.path}
-                                        onClick={() => router.push(subItem.path)}
-                                    >
-                                        {subItem.name}
-                                    </Menu.Item>
-                                ))}
-                            </Menu.Menu>
-                        ) : null}
                     </Menu.Item>
                 );
             })}
