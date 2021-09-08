@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { Form } from 'semantic-ui-react';
+import { Form, Message } from 'semantic-ui-react';
 import {
     serializeDateRangesToAPI,
     serializeVisitorStatsFromAPI,
 } from 'tmw-admin/utils/api-serialize';
 import { ajaxPost } from 'tmw-common/utils/ajax';
-import { VisitorStat } from 'tmw-admin/constants/app-types';
 import { ActionMessage } from 'tmw-admin/components/ActionMessage';
 import { DatesRangeInput } from 'semantic-ui-calendar-react';
 import {
@@ -89,12 +88,18 @@ export const StatsVisitorsChart: React.FunctionComponent = () => {
     }, [chart]);
 
     return (
-        <div style={{ marginTop: 20 }}>
-            <ActionMessage type="error" message={errorMessage} />
-            <Form>
-                <DatesRangeInput onChange={handleDateRangesInputChange} value={statsTimeRange} />
-            </Form>
-            <canvas id={STATS_CHART_NAMES.STATISTICS_TAB_VISITORS} />
-        </div>
+        <Message info>
+            <Message.Header>Stats Visitors</Message.Header>
+            <div style={{ marginTop: 20 }}>
+                <ActionMessage type="error" message={errorMessage} />
+                <Form>
+                    <DatesRangeInput
+                        onChange={handleDateRangesInputChange}
+                        value={statsTimeRange}
+                    />
+                </Form>
+                <canvas id={STATS_CHART_NAMES.STATISTICS_TAB_VISITORS} />
+            </div>
+        </Message>
     );
 };

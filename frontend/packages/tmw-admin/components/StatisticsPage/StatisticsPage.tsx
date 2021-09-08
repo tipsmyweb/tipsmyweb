@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Message } from 'semantic-ui-react';
 import { PageHeader } from 'tmw-admin/components/PageHeader';
 import { StatsTagsChart } from './StatsTagsChart';
 import { StatsVisitorsChart } from './StatsVisitorsChart';
@@ -13,11 +12,8 @@ export const StatisticsPage: React.FunctionComponent = () => {
                 subHeaderContent="Detailed statistics about TipsMyWeb"
             />
 
-            <Message info>
-                <Message.Header>Stats Tags</Message.Header>
-                <StatsTagsChart />
-                <StatsVisitorsChart />
-            </Message>
+            <StatsTagsChart />
+            <StatsVisitorsChart />
         </div>
     );
 };
