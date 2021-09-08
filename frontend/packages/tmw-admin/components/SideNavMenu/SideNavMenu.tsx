@@ -97,6 +97,16 @@ export const SideNavMenu: React.FunctionComponent<SideNavMenuProps> = ({
             name: 'Statistics',
             path: ADMIN_APP_ROUTES.STATISTICS,
             iconName: 'chart bar',
+            subMenu: [
+                {
+                    name: 'Visitors',
+                    path: ADMIN_APP_ROUTES.STATISTICS_VISITORS,
+                },
+                {
+                    name: 'Tags',
+                    path: ADMIN_APP_ROUTES.STATISTICS_TAGS,
+                },
+            ],
         },
     ];
 
