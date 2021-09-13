@@ -7,7 +7,12 @@ import { TagsSelector } from 'tmw-main/components/TagsSelector';
 
 import styles from './SearchPage.module.scss';
 
-export const SearchPage: React.FunctionComponent = () => {
+export interface SearchPageProps {
+    tagsFromCache?: any;
+}
+
+export const SearchPage: React.FunctionComponent<SearchPageProps> = ({ tagsFromCache }) => {
+    console.log(tagsFromCache);
     return (
         <PageLayout>
             <div className={styles.searchPage}>
