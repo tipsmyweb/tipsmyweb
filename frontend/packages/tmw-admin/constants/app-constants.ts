@@ -52,6 +52,7 @@ export enum ADMIN_APP_ROUTES {
     STATISTICS = '/statistics',
     STATISTICS_VISITORS = '/statistics/visitors',
     STATISTICS_TAGS = '/statistics/tags',
+    LOGS = '/logs',
 }
 
 export enum STATS_CHART_NAMES {

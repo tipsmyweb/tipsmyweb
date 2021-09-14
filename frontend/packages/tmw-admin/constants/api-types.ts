@@ -182,3 +182,9 @@ export interface APIDateRanges {
     start_date: string;
     end_date: string;
 }
+
+export interface APIPaginatedData<T> {
+    data: T[];
+    current_page: number;
+    last_page: number;
+}

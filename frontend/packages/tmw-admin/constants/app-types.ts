@@ -131,3 +131,9 @@ export interface StatTag {
     relatedTags: StatRelatedTag[];
     stats: StatTagBaseStructure;
 }
+
+export interface PaginatedData<T> {
+    data: T[];
+    currentPage: number;
+    lastPage: number;
+}

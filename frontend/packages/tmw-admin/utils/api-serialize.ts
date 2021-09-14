@@ -19,6 +19,7 @@ import {
     APIStatTagBaseDateStructure,
     APIStatTag,
     APIDateRanges,
+    APIPaginatedData,
 } from 'tmw-admin/constants/api-types';
 import {
     Contact,
@@ -37,6 +38,7 @@ import {
     StatTag,
     StatTagBaseDateStructure,
     StatTagBaseStructure,
+    PaginatedData,
 } from 'tmw-admin/constants/app-types';
 import { LOCALES } from 'tmw-admin/constants/app-constants';
 import { getApiDateFormat } from 'tmw-common/utils/date';
@@ -155,6 +157,16 @@ export const serializeLogsFromAPI = (logsFromAPI: APILog[]): Log[] => {
         geoipTimezone: log.geoip?.timezone,
         createdAt: log.created_at,
     }));
+};
+
+export const serializePaginatedLogsFromAPI = (
+    paginatedLogsFromAPI: APIPaginatedData<APILog>,
+): PaginatedData<Log> => {
+    return {
+        data: serializeLogsFromAPI(paginatedLogsFromAPI.data),
+        currentPage: paginatedLogsFromAPI.current_page,
+        lastPage: paginatedLogsFromAPI.last_page,
+    };
 };
 
 export const serializeVisitorStatsFromAPI = (
