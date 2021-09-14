@@ -110,6 +110,11 @@ export const SideNavMenu: React.FunctionComponent<SideNavMenuProps> = ({
                 },
             ],
         },
+        {
+            name: 'Logs',
+            path: ADMIN_APP_ROUTES.LOGS,
+            iconName: 'comment',
+        },
     ];
 
     const horizontalDisplayProps: MenuProps = {
