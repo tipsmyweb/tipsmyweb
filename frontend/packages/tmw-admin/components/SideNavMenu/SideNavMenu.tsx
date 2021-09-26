@@ -134,6 +134,13 @@ export const SideNavMenu: React.FunctionComponent<SideNavMenuProps> = ({
                               setSubMenuSelected(subMenuSelected != item.name ? item.name : '');
                           };
 
+                const onMouseOver =
+                    item.subMenu && !horizontalDisplay
+                        ? () => {
+                              setSubMenuSelected(subMenuSelected != item.name ? item.name : '');
+                          }
+                        : null;
+
                 const allPaths: string[] = !item.subMenu
                     ? [item.path]
                     : item.subMenu.map(subItem => subItem.path);
@@ -146,6 +153,7 @@ export const SideNavMenu: React.FunctionComponent<SideNavMenuProps> = ({
                         <Menu.Header
                             style={{ fontWeight: 400, cursor: 'pointer' }}
                             onClick={onClick}
+                            onMouseOver={onMouseOver}
                         >
                             <Icon
                                 className={item.iconName}
