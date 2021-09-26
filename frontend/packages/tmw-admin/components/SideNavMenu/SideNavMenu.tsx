@@ -12,7 +12,7 @@ export const SideNavMenu: React.FunctionComponent<SideNavMenuProps> = ({
     horizontalDisplay = false,
 }) => {
     const router = useRouter();
-    const [subMenuSelected, setSubMenuSelected] = React.useState<string>('');
+    const [selectedSubMenu, setSelectedSubMenu] = React.useState<string>('');
 
     const navItems = [
         {
@@ -131,13 +131,13 @@ export const SideNavMenu: React.FunctionComponent<SideNavMenuProps> = ({
                     !item.subMenu || horizontalDisplay
                         ? () => router.push(item.path)
                         : () => {
-                              setSubMenuSelected(subMenuSelected != item.name ? item.name : '');
+                              setSelectedSubMenu(selectedSubMenu != item.name ? item.name : '');
                           };
 
                 const onMouseOver =
                     item.subMenu && !horizontalDisplay
                         ? () => {
-                              setSubMenuSelected(subMenuSelected != item.name ? item.name : '');
+                              setSelectedSubMenu(selectedSubMenu != item.name ? item.name : '');
                           }
                         : null;
 
@@ -163,7 +163,7 @@ export const SideNavMenu: React.FunctionComponent<SideNavMenuProps> = ({
                             {item.subMenu && !horizontalDisplay ? (
                                 <Icon
                                     className={`dropdown ${
-                                        subMenuSelected == item.name
+                                        selectedSubMenu == item.name
                                             ? ''
                                             : 'rotated counterclockwise'
                                     }`}
@@ -171,7 +171,7 @@ export const SideNavMenu: React.FunctionComponent<SideNavMenuProps> = ({
                                 />
                             ) : null}
                         </Menu.Header>
-                        {item.subMenu && !horizontalDisplay && subMenuSelected == item.name ? (
+                        {item.subMenu && !horizontalDisplay && selectedSubMenu == item.name ? (
                             <Menu.Menu>
                                 {item.subMenu.map(subItem => (
                                     <Menu.Item
