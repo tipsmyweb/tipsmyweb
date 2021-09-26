@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DropdownProps, Form } from 'semantic-ui-react';
+import { DropdownProps, Form, Message } from 'semantic-ui-react';
 import { serializeDateRangesToAPI, serializeStatsTagsFromAPI } from 'tmw-admin/utils/api-serialize';
 import { ajaxPost } from 'tmw-common/utils/ajax';
 import { convertToSelectOptions, InputSelectOption } from 'tmw-admin/utils/select-options';
@@ -191,19 +191,25 @@ export const StatsTagsChart: React.FunctionComponent = () => {
     }, [chart]);
 
     return (
-        <div style={{ marginTop: 20 }}>
-            <ActionMessage type="error" message={errorMessage} />
-            <Form>
-                <DatesRangeInput onChange={handleDateRangesInputChange} value={statsTimeRange} />
-                <Form.Select
-                    fluid
-                    placeholder="Select primary tag"
-                    options={getParentTagOptions()}
-                    value={selectedTagOption}
-                    onChange={onTagOptionInputChange}
-                />
-            </Form>
-            <canvas id={STATS_CHART_NAMES.STATISTICS_TAB_SEARCH_TAGS} />
-        </div>
+        <Message info>
+            <Message.Header>Stats Tags</Message.Header>
+            <div style={{ marginTop: 20 }}>
+                <ActionMessage type="error" message={errorMessage} />
+                <Form>
+                    <DatesRangeInput
+                        onChange={handleDateRangesInputChange}
+                        value={statsTimeRange}
+                    />
+                    <Form.Select
+                        fluid
+                        placeholder="Select primary tag"
+                        options={getParentTagOptions()}
+                        value={selectedTagOption}
+                        onChange={onTagOptionInputChange}
+                    />
+                </Form>
+                <canvas id={STATS_CHART_NAMES.STATISTICS_TAB_SEARCH_TAGS} />
+            </div>
+        </Message>
     );
 };
