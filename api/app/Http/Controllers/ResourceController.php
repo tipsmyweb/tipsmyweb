@@ -244,6 +244,4 @@ class ResourceController extends Controller
         StatResource::launchStatResourceJob($resource->id, 'visit');
         return response()->json();
     }
-
-
 }

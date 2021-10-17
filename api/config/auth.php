@@ -105,6 +105,10 @@ return [
         'username'  =>  env('ADMIN_USERNAME'),
         'password'  =>  env('ADMIN_PASSWORD'),
         'validity_hours'      =>  2,
+    ],
+
+    'server_access' => [
+        'ips'   =>  env('SERVER_ACCESS_IPS', '127.0.0.1')
     ]
 
 ];

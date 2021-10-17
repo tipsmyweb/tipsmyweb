@@ -87,3 +87,13 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('stats/resources/trend', 'StatsController@getTopTrendyResources');
     Route::get('stats/resources/alltime', 'StatsController@getTopAllTimeResources');
 });
+
+# Server Access Routes
+Route::group(['middleware' => 'server.access'], function () {
+
+    # Monitoring - Resources
+    Route::get('monitoring/urls', 'MonitoringController@getResourcesUrls');
+    Route::get('monitoring/urls/failed', 'MonitoringController@resourcesUrlMonitoringJobFailed');
+    Route::post('monitoring/urls/results', 'MonitoringController@sendResourcesUrlsAvailabilityResults');
+
+});
