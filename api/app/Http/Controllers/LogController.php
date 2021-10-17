@@ -53,7 +53,8 @@ class LogController extends Controller
             })
             ->where("created_date", $date)
             ->when($sortedQuery, function($query, $sortedQuery) {
-                return $query->orderBy($sortedQuery['attribute'], $sortedQuery['direction']);
+                $sortedDirection = $sortedQuery['direction'] == 'ascending' ? 'asc': 'desc';
+                return $query->orderBy($sortedQuery['attribute'], $sortedDirection);
             }, function($query) {
                 return $query->orderBy('created_at', 'DESC');
             })
