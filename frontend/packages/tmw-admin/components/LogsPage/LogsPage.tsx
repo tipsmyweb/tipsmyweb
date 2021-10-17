@@ -15,7 +15,11 @@ import { wrapText } from '../../utils/content-wrapper';
 import { MAX_CONTENT_LENGTH } from '../../constants/app-constants';
 import { getApiDateFormat, getTimeFromApiDate } from 'tmw-common/utils/date';
 import { ajaxGet, ajaxPost } from 'tmw-common/utils/ajax';
-import { serializePaginatedLogsFromAPI, serializeFiltersFromAPI } from '../../utils/api-serialize';
+import {
+    serializePaginatedLogsFromAPI,
+    serializeFiltersFromAPI,
+    serializeFiltersToAPI,
+} from '../../utils/api-serialize';
 import { Filter, Log, PaginatedData, SortingDirection } from '../../constants/app-types';
 import { PageHeader } from '../PageHeader';
 import { ActionMessage } from '../ActionMessage';
@@ -52,7 +56,7 @@ export const LogsPage: React.FunctionComponent = () => {
             sort_direction: sortedDirection,
             sort_attribute: sortedColumn,
             search: searchLog.length > 2 ? searchLog : '',
-            filters: selectedFilters, // ToDo Migrate to API Format
+            filters: serializeFiltersToAPI(selectedFilters),
         })
             .then(res => {
                 const logs = serializePaginatedLogsFromAPI(res.data);

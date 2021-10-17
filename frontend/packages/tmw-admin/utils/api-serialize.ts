@@ -268,6 +268,14 @@ export const serializeResourceTypeToAPI = (type: Partial<ResourceType>): Partial
     };
 };
 
+export const serializeFiltersToAPI = (Filters: Filter[]): APIFilter[] => {
+    return Filters.filter(filter => filter.values.length > 0)
+      .map(filter => ({
+        attribute: filter.attribute,
+        values: filter.values,
+    }));
+};
+
 export const serializeStatsBaseDateStructureFromAPI = (
     statsTagsBaseDateStructure: APIStatTagBaseDateStructure[],
 ): StatTagBaseDateStructure[] => {
