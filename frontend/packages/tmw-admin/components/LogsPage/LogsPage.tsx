@@ -16,7 +16,7 @@ import { MAX_CONTENT_LENGTH } from '../../constants/app-constants';
 import { getApiDateFormat, getTimeFromApiDate } from 'tmw-common/utils/date';
 import { ajaxGet, ajaxPost } from 'tmw-common/utils/ajax';
 import { serializePaginatedLogsFromAPI, serializeFiltersFromAPI } from '../../utils/api-serialize';
-import { Filter, Log, PaginatedData } from '../../constants/app-types';
+import { Filter, Log, PaginatedData, SortingDirection } from '../../constants/app-types';
 import { PageHeader } from '../PageHeader';
 import { ActionMessage } from '../ActionMessage';
 import { SyntheticEvent } from 'react';
@@ -26,8 +26,8 @@ export const LogsPage: React.FunctionComponent = () => {
     const [logs, setLogs] = React.useState<PaginatedData<Log>>();
     const [logFilters, setLogFilters] = React.useState<Filter[]>([]);
     const [activePage, setActivePage] = React.useState<number>(1);
-    const [sortedColumn, setSortedColumn] = React.useState<string>('description');
-    const [sortedDirection, setSortedDirection] = React.useState<string>('asc');
+    const [sortedColumn, setSortedColumn] = React.useState<string>('created_at');
+    const [sortedDirection, setSortedDirection] = React.useState<SortingDirection>('descending');
     const [totalPage, setTotalPage] = React.useState<number>(0);
     const [isLoading, setIsLoading] = React.useState<boolean>(true);
     const [errorMessage, setErrorMessage] = React.useState<string>('');
@@ -93,11 +93,10 @@ export const LogsPage: React.FunctionComponent = () => {
         fetchLogs(newActivePage).finally(() => setIsLoading(false));
     };
 
-    const onHeaderCellClick = function (event: string): void {
-        setSortedColumn('description');
-        if (sortedDirection == '') setSortedDirection('asc');
-        else if (sortedDirection == 'asc') setSortedDirection('desc');
-        else setSortedDirection('asc');
+    const onHeaderCellClick = function (sortedAttribute: string): void {
+        setSortedColumn(sortedAttribute);
+        if (sortedDirection == 'ascending') setSortedDirection('descending');
+        else setSortedDirection('ascending');
     };
 
     const onSearchInputChange = (_: any, { value }: { value: string }): void => {
@@ -266,30 +265,40 @@ export const LogsPage: React.FunctionComponent = () => {
                     </Grid.Row>
                 </Grid>
 
-                {isLoading ? (
-                    <Loader active inline="centered" />
-                ) : (
-                    <>
-                        <Table celled fixed sortable striped selectable unstackable>
-                            <Table.Header>
-                                <Table.Row>
-                                    <Table.HeaderCell
-                                        sorted={
-                                            sortedColumn == 'description'
-                                                ? sortedDirection
-                                                : undefined
-                                        }
-                                        onClick={() => onHeaderCellClick('description')}
-                                    >
-                                        Description
-                                    </Table.HeaderCell>
-                                    <Table.HeaderCell>Level</Table.HeaderCell>
-                                    <Table.HeaderCell>Route</Table.HeaderCell>
-                                    <Table.HeaderCell>Localisation</Table.HeaderCell>
-                                    <Table.HeaderCell>Time</Table.HeaderCell>
-                                </Table.Row>
-                            </Table.Header>
-                            <Table.Body>
+                <Table celled fixed sortable striped selectable unstackable>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell
+                                sorted={sortedColumn == 'description' ? sortedDirection : undefined}
+                                onClick={() => onHeaderCellClick('description')}
+                            >
+                                Description
+                            </Table.HeaderCell>
+                            <Table.HeaderCell
+                                sorted={sortedColumn == 'level' ? sortedDirection : undefined}
+                                onClick={() => onHeaderCellClick('level')}
+                            >
+                                Level
+                            </Table.HeaderCell>
+                            <Table.HeaderCell>Route</Table.HeaderCell>
+                            <Table.HeaderCell>Localisation</Table.HeaderCell>
+                            <Table.HeaderCell
+                                sorted={sortedColumn == 'created_at' ? sortedDirection : undefined}
+                                onClick={() => onHeaderCellClick('created_at')}
+                            >
+                                Time
+                            </Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+                    <Table.Body>
+                        {isLoading ? (
+                            <Table.Row>
+                                <Table.Cell>
+                                    <Loader active inline="centered" style={{ margin: 20 }} />
+                                </Table.Cell>
+                            </Table.Row>
+                        ) : (
+                            <>
                                 {logs?.data.map(log => (
                                     <Table.Row key={log.id}>
                                         <Popup
@@ -331,15 +340,17 @@ export const LogsPage: React.FunctionComponent = () => {
                                         </Table.Cell>
                                     </Table.Row>
                                 ))}
-                            </Table.Body>
-                        </Table>
-                        <Pagination
-                            totalPages={totalPage}
-                            activePage={activePage}
-                            boundaryRange={defaultBoundaryRange}
-                            onPageChange={onPaginationChange}
-                        />
-                    </>
+                            </>
+                        )}
+                    </Table.Body>
+                </Table>
+                {!isLoading && (
+                    <Pagination
+                        totalPages={totalPage}
+                        activePage={activePage}
+                        boundaryRange={defaultBoundaryRange}
+                        onPageChange={onPaginationChange}
+                    />
                 )}
             </Segment>
         </div>

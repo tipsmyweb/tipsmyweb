@@ -146,3 +146,6 @@ export interface SelectedFilter {
     attribute: string;
     values: string;
 }
+
+export type SortingDirection =
+    'ascending' | 'descending'
