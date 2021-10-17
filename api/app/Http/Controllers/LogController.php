@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\LogRoute;
 use Illuminate\Http\Request;
 use App\Log;
 
@@ -59,5 +60,32 @@ class LogController extends Controller
             ->paginate(config('app.pagination.default'));
 
         return response()->json($logs, 200);
+    }
+
+    public function getLogFilters()
+    {
+        $log_levels = Log::select('level')
+            ->distinct()
+            ->get()
+            ->pluck('level')
+            ->toArray();
+        $log_routes = LogRoute::select('uri')
+            ->distinct()
+            ->get()
+            ->pluck('uri')
+            ->toArray();
+
+        $filters = array(
+            array(
+                'attribute' => 'level',
+                'values'    => array_values($log_levels)
+            ),
+            array(
+                'attribute' => 'route',
+                'values'    => array_values($log_routes)
+            )
+        );
+
+        return response()->json($filters, 200);
     }
 }
