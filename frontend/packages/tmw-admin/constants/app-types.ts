@@ -131,3 +131,21 @@ export interface StatTag {
     relatedTags: StatRelatedTag[];
     stats: StatTagBaseStructure;
 }
+
+export interface PaginatedData<T> {
+    data: T[];
+    currentPage: number;
+    lastPage: number;
+}
+
+export interface Filter {
+    attribute: string;
+    values: string[];
+}
+export interface SelectedFilter {
+    attribute: string;
+    values: string;
+}
+
+export type SortingDirection =
+    'ascending' | 'descending'

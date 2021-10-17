@@ -19,6 +19,8 @@ import {
     APIStatTagBaseDateStructure,
     APIStatTag,
     APIDateRanges,
+    APIPaginatedData,
+    APIFilter,
 } from 'tmw-admin/constants/api-types';
 import {
     Contact,
@@ -37,6 +39,8 @@ import {
     StatTag,
     StatTagBaseDateStructure,
     StatTagBaseStructure,
+    PaginatedData,
+    Filter,
 } from 'tmw-admin/constants/app-types';
 import { LOCALES } from 'tmw-admin/constants/app-constants';
 import { getApiDateFormat } from 'tmw-common/utils/date';
@@ -157,6 +161,16 @@ export const serializeLogsFromAPI = (logsFromAPI: APILog[]): Log[] => {
     }));
 };
 
+export const serializePaginatedLogsFromAPI = (
+    paginatedLogsFromAPI: APIPaginatedData<APILog>,
+): PaginatedData<Log> => {
+    return {
+        data: serializeLogsFromAPI(paginatedLogsFromAPI.data),
+        currentPage: paginatedLogsFromAPI.current_page,
+        lastPage: paginatedLogsFromAPI.last_page,
+    };
+};
+
 export const serializeVisitorStatsFromAPI = (
     VisitorStatsFromAPI: APIVisitorStat[],
 ): VisitorStat[] => {
@@ -254,6 +268,14 @@ export const serializeResourceTypeToAPI = (type: Partial<ResourceType>): Partial
     };
 };
 
+export const serializeFiltersToAPI = (Filters: Filter[]): APIFilter[] => {
+    return Filters.filter(filter => filter.values.length > 0)
+      .map(filter => ({
+        attribute: filter.attribute,
+        values: filter.values,
+    }));
+};
+
 export const serializeStatsBaseDateStructureFromAPI = (
     statsTagsBaseDateStructure: APIStatTagBaseDateStructure[],
 ): StatTagBaseDateStructure[] => {
@@ -301,4 +323,11 @@ export const serializeDateRangesToAPI = (startDate: Date, endDate: Date): APIDat
         start_date: getApiDateFormat(startDate),
         end_date: getApiDateFormat(endDate),
     };
+};
+
+export const serializeFiltersFromAPI = (FiltersFromAPI: APIFilter[]): Filter[] => {
+    return FiltersFromAPI.map(filter => ({
+        attribute: filter.attribute,
+        values: filter.values,
+    }));
 };

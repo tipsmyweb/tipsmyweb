@@ -79,6 +79,7 @@ Route::group(['middleware' => 'admin'], function () {
 
     # Log Controller
     Route::post('logs', 'LogController@getLogs');
+    Route::get('filters/log', 'LogController@getLogFilters');
 
     # Stat Controller
     Route::post('stats/tags/search', 'StatsController@getStatsTags');
