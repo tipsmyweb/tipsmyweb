@@ -137,3 +137,12 @@ export interface PaginatedData<T> {
     currentPage: number;
     lastPage: number;
 }
+
+export interface Filter {
+    attribute: string;
+    values: string[];
+}
+export interface SelectedFilter {
+    attribute: string;
+    values: string;
+}

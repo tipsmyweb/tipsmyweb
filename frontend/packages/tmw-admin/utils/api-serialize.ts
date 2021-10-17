@@ -20,6 +20,7 @@ import {
     APIStatTag,
     APIDateRanges,
     APIPaginatedData,
+    APIFilter,
 } from 'tmw-admin/constants/api-types';
 import {
     Contact,
@@ -39,6 +40,7 @@ import {
     StatTagBaseDateStructure,
     StatTagBaseStructure,
     PaginatedData,
+    Filter,
 } from 'tmw-admin/constants/app-types';
 import { LOCALES } from 'tmw-admin/constants/app-constants';
 import { getApiDateFormat } from 'tmw-common/utils/date';
@@ -313,4 +315,11 @@ export const serializeDateRangesToAPI = (startDate: Date, endDate: Date): APIDat
         start_date: getApiDateFormat(startDate),
         end_date: getApiDateFormat(endDate),
     };
+};
+
+export const serializeFiltersFromAPI = (FiltersFromAPI: APIFilter[]): Filter[] => {
+    return FiltersFromAPI.map(filter => ({
+        attribute: filter.attribute,
+        values: filter.values,
+    }));
 };

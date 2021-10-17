@@ -188,3 +188,8 @@ export interface APIPaginatedData<T> {
     current_page: number;
     last_page: number;
 }
+
+export interface APIFilter {
+    attribute: string;
+    values: string[];
+}
