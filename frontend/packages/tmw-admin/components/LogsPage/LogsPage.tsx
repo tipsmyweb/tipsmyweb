@@ -103,10 +103,6 @@ export const LogsPage: React.FunctionComponent = () => {
         setSearchLog(value);
     };
 
-    const onLogCreationDateDropdownClick = function (event: SyntheticEvent, data: object): void {
-        console.log(data);
-    };
-
     const onLogFilterClick = function (attribute: string, value: string): void {
         const index = selectedFilters.findIndex(f => f.attribute == attribute);
 
@@ -199,7 +195,6 @@ export const LogsPage: React.FunctionComponent = () => {
                                 selection
                                 defaultValue="today"
                                 options={logCreationDateOptions}
-                                onChange={onLogCreationDateDropdownClick}
                             />
                         </Grid.Column>
                     </Grid.Row>
